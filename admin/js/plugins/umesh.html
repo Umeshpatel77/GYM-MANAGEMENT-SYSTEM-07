@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    body{
+        background-image:url("C:/xampp/htdocs/gym1/admin/img/invoice.jpeg");
+        background-repeat: no-repeat;
+      /*  background-size: auto;*/
+      background-position: center;
+      background-size: cover;
+
+      height :100%;
+
+    }
+
+            
+    h1{
+            background-color:#fb3e6a  ;
+            color:white ;
+            border:solid;
+            border-width:4px;
+            border-color: black;
+            padding: 26px;  
+
+        }
+
+        fieldset{
+            width:50%;
+            height:90%;
+            text-align: center;
+            border-width:7px;
+            border-color: black;
+            margin:auto;
+            background-color: white;
+
+        }
+
+        #cal{
+            background-color: #f72250 ;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        
+        h2{
+            color: black ;
+            /* border-width:13px;
+            border-color: black; */
+
+        }
+
+        input{
+            width:120px;
+            padding-left: 25px;
+            border-radius: 2px;
+        }
+        
+    </style>
+</head>
+<body>
+    <fieldset>
+        <h1>Invoice</h1>
+        <div class="main" id="main">
+        
+    
+        <h2><u>Package type</u>
+            <select>
+                <option>Diamond</option>
+                <option>Silver</option>
+                <option>Gold</option>
+                <option>Family</option>
+                <option>platinium</option>
+                <option></option>
+
+            </select>
+             &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u>Price</u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u>Quantity</u>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<u> Total</u></h2>
+        <u></u>
+            
+        <input type="Text" id="a">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="Text" id="b">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="Text" id="c">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="Text" onclick="abc()" id="d"><br><br>
+
+        <pre>                                                             Total Amount &nbsp;<input type="Text" onclick="add()" id="tot"><br></pre> 
+
+ <pre>                                                             Discount(%) &nbsp;<input type="Text" onclick="div()" id="dis"><br></pre>
+ <pre>                                                             Total Bill &nbsp;<input type="Text" onclick="div()" id="sub"><br></pre>
+ <button id="cal" onclick="print()">Print</button><br><br> 
+
+    </div>
+    </fieldset>
+
+    <script>
+        function abc(){
+         var a= ( document.getElementById('a').value)
+         var b= parseInt( document.getElementById('b').value)
+         var c= parseInt( document.getElementById('c').value)
+         document.getElementById('d').value = b*c
+        }
+
+        function add(){
+
+        var d= parseInt( document.getElementById('d').value) 
+
+        var total= d
+        document.getElementById('tot').value=total
+
+        var dis= total*0.10
+        // document.write(dis + '<br>')
+        document.getElementById('dis').value=dis
+
+
+        var tb= total-dis
+        // document.write(tb + '<br>')
+        document.getElementById('sub').value=tb
+
+        }
+    </script>
+</body>
+</html>
